@@ -1,22 +1,13 @@
 ﻿var r = new Random();
 var favNumber = r.Next(1, 1000);
-//var favNumber = 33;
 
-Console.Write("Gues what my favorite number is: ");
-var userInput = int.Parse(Console.ReadLine());
-
+Console.Write("Guess what my favorite number is: ");
+var userInput = double.Parse(Console.ReadLine());
 
 while (userInput != favNumber)
 {
-    if (userInput > favNumber)
-    {
-        Console.Write("Too high. Guess again: ");
-        userInput = int.Parse(Console.ReadLine());
-    }
-    else if (userInput < favNumber)
-    {
-        Console.Write("Too low. Guess again: ");
-        userInput = int.Parse(Console.ReadLine());
-    }
+    var response = userInput > favNumber ? "Too high. Guess again: " : "Too low. Guess again: ";
+    Console.Write(response);
+    userInput = double.Parse(Console.ReadLine());
 }
-Console.WriteLine("You guessed it!");
+Console.WriteLine("Great job! You guessed it!");
